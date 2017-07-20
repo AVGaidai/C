@@ -9,11 +9,11 @@
 
 
 /**
- * \brief The detab function.
+ * \brief The entab function.
  *
- * The program replaces <tab> on the N spaces.
- * Input data: any text with spaces and <tab>.
- * Output data: input text with spaces and without <tab>.
+ * The program replaces N spaces on the <tab>.
+ * Input data: any text with spaces.
+ * Output data: input text, but N spaces = <tab>.
  */
 int main(int argc, char *argv[])
 {
@@ -24,8 +24,9 @@ int main(int argc, char *argv[])
     * spaces -- counter for spaces
     * i -- pointer on current symbol for input
     * j -- pointer on current symbol for output
+    * pos -- current absolute position (<tab> = N items)
     */
-    int i = 0, j = 0, step = 10, spaces = 0;
+    int i = 0, j = 0, step = 10, spaces = 0, pos = 0;
     int size;
 
    /* 
@@ -62,23 +63,29 @@ int main(int argc, char *argv[])
     
     while (input[i] != '\0') {
 	if (input[i] == '\t') {
-	    spaces = N - (j % N);
-	   /*
-	    * Memory reallocation for output stream
-	    */
-	    output = (char *) realloc((void *) output,
-				      (size + spaces) * sizeof(char));
-	    size += spaces;
-	    for ( ; spaces != 0; --spaces) {
-		output[j++] = ' ';
-	    }
-	    --j;
-	} else {
-	    output[j] = input[i];
+	    pos += N - (pos % N) - 1;
 	}
-	++i, ++j;
+	    
+	if (input[i] == ' ') {
+	    ++spaces;
+	} else {
+	    spaces = 0;
+	}
+	output[j] = input[i];
+	
+	if (spaces != 0 && (pos + 1) % N == 0) {
+	    j -= spaces - 1;
+	    output[j] = '\t';
+	    spaces = 0;
+	}
+	++i, ++j, ++pos;
     }
     output[j] = input[i];
+
+   /* 
+    * Memory reallocation for output stream
+    */
+    output = (char *) realloc((void *) output, j * sizeof(char));
 
     printf("See \"result.txt\" file.\n");
 
