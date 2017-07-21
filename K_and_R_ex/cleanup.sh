@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm *.out *.txt 2>/dev/null
+rm *.out result.* 2>/dev/null
