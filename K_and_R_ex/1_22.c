@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
     * Memory allocation for output stream
     */
     output = (char *) malloc((size + size / N) * sizeof(char));
-    
+    ldil = -1;
     while (input[i] != '\0' && size > N) {
 	if (input[i] == '\t') {
 	    pos += n - (pos % n) - 1;
@@ -79,17 +79,17 @@ int main(int argc, char *argv[])
 	if (pos == N) {
 	    if (ldil == -1) {
 		while (input[i] != '\0') {
-		    if (input[i] == '\t' || input[i] == ' ') {
+		    output[j] = input[i];
+		    ++i, ++j;
+		    if (input[i - 1] == '\t' || input[i - 1] == ' ') {
 			output[j++] = '\n';
 			pos = 0;
 			break;
 		    }
-		    output[j] = input[i];
-		    ++i, ++j;
 		}
 	    } else { 
-		j -= i - ldil;
-		i = ldil;
+		j -= i - ldil - 1;
+		i = ldil + 1;
 		pos = 0;
 		ldil = -1;
 		output[j++] = '\n';
