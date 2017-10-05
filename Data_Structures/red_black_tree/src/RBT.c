@@ -15,12 +15,12 @@
 #define DEFAULT 2
 
 char bg_color[][9] = {
-    "\E[40;38m",     // BLACK
-    "\E[41;38m",     // RED
-    "\E[0m\0"        // DEFAULT
+    "\E[40;38m",     /* BLACK   */
+    "\E[41;38m",     /* RED     */
+    "\E[0m\0"        /* DEFAULT */
 };
 
-// Dimensions of terminal window
+/* Dimensions of terminal window */
 struct winsize w;
 
 
@@ -61,6 +61,8 @@ typedef struct {
  * \brief The initializer function.
  *
  * \param T is pointer to red-black tree.
+ *
+ * \return no value.
  */
 void RBT_Init(RB_Tree *T)
 {
@@ -86,6 +88,8 @@ void RBT_Init(RB_Tree *T)
  * 
  * \param T is pointer to red-black tree.
  * \param z is pointer to node of the tree about which to rotate.
+ * 
+ * \return no value.
  */
 void RBT_Left_Rotate(RB_Tree *T, struct node *z)
 {
@@ -118,6 +122,8 @@ void RBT_Left_Rotate(RB_Tree *T, struct node *z)
  *
  * \param T is pointer to red-black tree.
  * \param z is pointer to node about which to rotate.
+ * 
+ * \return no value.
  */
 void RBT_Right_Rotate(RB_Tree *T, struct node *z)
 {
@@ -150,6 +156,8 @@ void RBT_Right_Rotate(RB_Tree *T, struct node *z)
  *
  * \param T is pointer to red-black tree.
  * \param z is poiner to node that can vioalte red-black properties.
+ * 
+ * \return no value.
  */
 void RBT_Insert_Fixup(RB_Tree *T, struct node *z)
 {
@@ -213,7 +221,7 @@ void RBT_Insert_Fixup(RB_Tree *T, struct node *z)
  * \param value is pointer to memory area with data.
  * \param size is size of value.
  *
- * \return 0.
+ * \return zero if success.
  */
 int RBT_Insert(RB_Tree *T, int key, void *value, size_t size)
 {
@@ -301,6 +309,8 @@ int RBT_Find(RB_Tree *T, int key, void **value, size_t *size)
  * \param T is pointer to red-black tree.
  * \param a is pointer to first node.
  * \param b is pointer to second node.
+ *
+ * \return no value.
  */
 void RBT_Transplant(RB_Tree *T, struct node *a, struct node *b)
 {
@@ -354,10 +364,12 @@ struct node *RBT_Minimum(RB_Tree *T, struct node *root)
  *
  * \param T is pointer to red-black tree.
  * \param x is poiner to node that can vioalte red-black properties.
+ *
+ * \return no value.
  */
 void RBT_Delete_Fixup(RB_Tree *T, struct node *x)
 {
-    struct node *w;    // Brathers of 'x' node
+    struct node *w;   /* Brathers of 'x' node */
     
     while (x->color == BLACK && x != T->root) {
 	if (x->parent->left == x) {
@@ -498,6 +510,8 @@ int RBT_Delete(RB_Tree *T, int key)
  * \param lvl is level/depth of current node in the tree.
  * \param max_lvl is maximum level/depth of the tree.
  * \param pos is pointer to auxiliary massive.
+ *
+ * \return no value.
  */ 
 void
 RBT_Print_Node(struct node *node, int lvl, int max_lvl, int *pos)
@@ -542,6 +556,8 @@ RBT_Print_Node(struct node *node, int lvl, int max_lvl, int *pos)
  *
  * \param T is pointer to red-black tree.
  * \param root is pointer to root of red-black tree.
+ *
+ * \return no value. 
  */
 int RBT_Depth(RB_Tree *T, struct node *root)
 {
@@ -564,6 +580,8 @@ int RBT_Depth(RB_Tree *T, struct node *root)
  * \brief The print red-black tree function.
  *
  * \param T is pointer to red-black tree.
+ *
+ * \return no value.
  */
 void RBT_Print(RB_Tree *T)
 {
@@ -583,9 +601,9 @@ void RBT_Print(RB_Tree *T)
 	for (int i = 0; i < max_lvl - 1; ++i)
 	    max_length *= 2;
 	max_length *= 14;
-	// Clear screen
+        /* Clear screen */
 	printf("\E[H\E[2J\E[0m");
-	// Determine size of terminal window
+	/* Determine size of terminal window */
 	ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
 	if (max_length > w.ws_col || (max_lvl + 1) * 2 > w.ws_row) {
 	    printf("The dimensions of the terminal "
