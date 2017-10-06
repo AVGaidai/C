@@ -64,7 +64,7 @@ double Ternary_Search_Min(double (*f)(double),
  * \param right is right border of the function definition area.
  * \param eps is accuracy of calculations.
  *
- * \return the point at which the function reachesa minimum.
+ * \return the point at which the function reachesa maximum.
  */
 double Ternary_Search_Max(double (*f)(double),
                           double left, double right, double eps)
