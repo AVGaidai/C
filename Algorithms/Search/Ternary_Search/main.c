@@ -11,7 +11,7 @@
 
 #define GR 1.618
 
-#define FUNC sin(x)
+#define FUNC pow(x, 2.0) - 5 * x
 
 
 
@@ -31,7 +31,7 @@ double f(double x)
 
 /**
  * \brief The ternary search minimum of the function.
- *
+pp *
  * \param f is function under study.
  * \param left is left border of the function definition area.
  * \param right is right border of the function definition area.

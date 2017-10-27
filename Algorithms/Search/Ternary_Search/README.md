@@ -49,7 +49,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>GR</b>&#160;&#160;&#160;1.618</td></tr>
 <tr class="separator:a656da95f9680f14093be09a52ab6752f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a587e21dda1f72be700a6206023ad681b"><td class="memItemLeft" align="right" valign="top"><a id="a587e21dda1f72be700a6206023ad681b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FUNC</b>&#160;&#160;&#160;sin(x)</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FUNC</b>&#160;&#160;&#160;pow(x, 2.0) - 5 * x</td></tr>
 <tr class="separator:a587e21dda1f72be700a6206023ad681b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
