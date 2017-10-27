@@ -41,13 +41,20 @@ eps is accuracy calculations.
 
 <!-- iframe showing the search results (closed by default) -->
 
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<!--header-->
+<div class="title">main.c File Reference</div>  </div>
+</div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
@@ -55,6 +62,9 @@ eps is accuracy calculations.
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a656da95f9680f14093be09a52ab6752f"><td class="memItemLeft" align="right" valign="top"><a id="a656da95f9680f14093be09a52ab6752f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>GR</b>&#160;&#160;&#160;1.618</td></tr>
+<tr class="separator:a656da95f9680f14093be09a52ab6752f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a587e21dda1f72be700a6206023ad681b"><td class="memItemLeft" align="right" valign="top"><a id="a587e21dda1f72be700a6206023ad681b"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>FUNC</b>&#160;&#160;&#160;sin(x)</td></tr>
 <tr class="separator:a587e21dda1f72be700a6206023ad681b"><td class="memSeparator" colspan="2">&#160;</td></tr>

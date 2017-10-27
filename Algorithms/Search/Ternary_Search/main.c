@@ -1,6 +1,6 @@
 /** \file */
 /*
- * Ternary search minimum/maximum of function.
+ * Ternary search minimum/maximum of function by gold ratio.
  * BY GAIDAI ANATOLY
  * 2017
  */
@@ -9,7 +9,10 @@
 
 #include <math.h>
 
+#define GR 1.618
+
 #define FUNC sin(x)
+
 
 
 /**
@@ -44,8 +47,8 @@ double Ternary_Search_Min(double (*f)(double),
     if (right - left < eps) {
         return (left + right) / 2;
     }
-    a = (left * 2 + right) / 3;
-    b = (left + right * 2) / 3;
+    a = right - (right - left) / GR;
+    b = left + (right - left) / GR;
 
     if (f(a) < f(b)) {
         return Ternary_Search_Min(f, left, b, eps);
@@ -74,8 +77,8 @@ double Ternary_Search_Max(double (*f)(double),
     if (right - left < eps) {
         return (left + right) / 2;
     }
-    a = (left * 2 + right) / 3;
-    b = (left + right * 2) / 3;
+    a = right - (right - left) / GR;
+    b = left + (right - left) / GR;
 
     if (f(a) > f(b)) {
         return Ternary_Search_Max(f, left, b, eps);
