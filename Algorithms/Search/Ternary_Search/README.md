@@ -182,7 +182,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the point at which the function reachesa maximum. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the point at which the function reaches maximum. </dd></dl>
 
 </div>
 </div>
@@ -234,7 +234,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the point at which the function reachesa minimum. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the point at which the function reaches minimum. </dd></dl>
 
 </div>
 </div>
