@@ -11,7 +11,7 @@
 
 #define GR 1.618
 
-#define FUNC y * y + 2 * (-x)
+#define FUNC x * x + y * y + 6 * y - 4 * x
 
 
 
