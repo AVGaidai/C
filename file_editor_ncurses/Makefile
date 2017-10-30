@@ -1,7 +1,7 @@
 P=main.out
 OBJECTS=main.c
 CFLAGS=-Wall -g -pedantic -ansi
-LIBS=-lncurses
+LIBS=-lpanel -lncurses
 CC=gcc
 
 all:
