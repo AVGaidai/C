@@ -3,18 +3,13 @@
 #include <panel.h>
 
 
+WINDOW *windows[4];
+PANEL *panels[4], *top;
+
+
 /**
  * \brief Function screen initialization.
  * 
- * To get character-at-a-time input without echoing
- * (most interactive, screen oriented programs want
- * this), the following sequence should be used:
- *   initscr(); cbreak(); noecho();
- * Most programs would additionally use the sequence:
- *   nonl();
- *   intrflush(stdscr, FALSE);
- *   keypad(stdscr, TRUE);
- *
  * \return the integer 1 upon failure and 0 upon successful completion.
  */
 int init_scr(void)
@@ -39,36 +34,122 @@ int init_scr(void)
     return 0;
 }
     
-
+/**
+ * \brief Function colors initialization.
+ *
+ * Color pairs:
+ * 1) White font and blue background.
+ * 2) White font and cyan background.
+ * 3) White font and green background.
+ *
+ * \return the integer 1 upon failure and 0 upon successful completion.
+ */
 int init_colors(void)
 {
-    if (!has_colors())
+    if (!has_colors()) {
+        endwin();
         return 1;
+    }
     
-    curs_set(0); /* Invisible cursor */
+    curs_set(1); /* Invisible cursor */
 
-    if (start_color() == ERR)
+    if (start_color() == ERR) {
+        endwin();
         return 1;
+    }
     
-    if (init_pair(1, COLOR_WHITE, COLOR_BLUE) == ERR)
+    if (init_pair(1, COLOR_WHITE, COLOR_BLUE) == ERR) {
+        endwin();
         return 1;
+    }
     
-    if (init_pair(2, COLOR_WHITE, COLOR_CYAN) == ERR)
+    if (init_pair(2, COLOR_BLACK, COLOR_CYAN) == ERR) {
+        endwin();
         return 1;
+    }
     
-    if (init_pair(3, COLOR_WHITE, COLOR_GREEN) == ERR)
+    if (init_pair(3, COLOR_WHITE, COLOR_GREEN) == ERR) {
+        endwin();
         return 1;
+    }
 
     return 0;
 }
 
 
+/**
+ * \brief Function windows initialization.
+ *
+ * 1 window is info panel;
+ * 2 window is fist panel;
+ * 3 window is second panel;
+ * 4 window is file redactor.
+ *
+ * \return no value.
+ */
+void init_windows()
+{
+    windows[0] = newwin(1, COLS, 0, 0);
+    wbkgdset(windows[0], COLOR_PAIR(2));
+    wclear(windows[0]);
+    mvwprintw(windows[0], 0, 0, "Tab -- next panel; F2 -- exit");
+    wrefresh(windows[0]);
+    
+    windows[1] = newwin(LINES - 1, COLS / 2, 1, 0);
+    wbkgdset(windows[1], COLOR_PAIR(1));
+    wclear(windows[1]);
+    box(windows[1], ACS_VLINE, ACS_HLINE);
+    wrefresh(windows[1]);
+
+    windows[2] = newwin(LINES - 1, COLS - COLS / 2, 1, COLS / 2);
+    wbkgdset(windows[2], COLOR_PAIR(1));
+    wclear(windows[2]);
+    box(windows[2], ACS_VLINE, ACS_HLINE);
+    wrefresh(windows[2]);
+
+    windows[3] = newwin(LINES, COLS, 0, 0);
+    wbkgdset(windows[3], COLOR_PAIR(1));
+    wclear(windows[3]);
+    wrefresh(windows[3]);
+}
+
+
+/**
+ * \brief Function panels initialization.
+ *
+ * N panel associates with N window;
+ *
+ * \return no value.
+ */
+void init_panels()
+{
+    int i;
+    
+    for (i = 0; i < 4; ++i)
+        panels[i] = new_panel(windows[i]);
+
+    bottom_panel(panels[3]);
+    
+    /* Connect panels 1 and 2 to switch */
+    set_panel_userptr(panels[1], panels[2]);
+    set_panel_userptr(panels[2], panels[1]);
+}
+
+
+/**
+ * \brief Function print current panels.
+ *
+ * \return no value.
+ */
+void print_panels(void)
+{
+    update_panels();
+    doupdate();
+}
+
 int main(int argc, char *argv[])
 {
-    WINDOW *windows[3];
-    PANEL *panels[3], *top;
     int i, ch;
-    
     if (init_scr()) {
         fprintf(stderr, "Error into init_scr()...\n");
         return 1;
@@ -76,28 +157,13 @@ int main(int argc, char *argv[])
 
     if (init_colors()) {
         fprintf(stderr, "Error: not support colors!\n");
-        endwin();
         return 1;
     }
     
-    for (i = 0; i < 3; ++i) {
-        windows[i] = newwin(20 + i * 2, 100 - i * 10, 2 + i, i * 10);
-        wbkgdset(windows[i], COLOR_PAIR(i + 1));
-        wclear(windows[i]);
-        mvwprintw(windows[i], 1, 1, "hello world!!! I'am panel %d\n", i);
-        box(windows[i], ACS_VLINE, ACS_HLINE);
-        wrefresh(windows[i]);
+    init_windows();
+    init_panels();
 
-        panels[i] = new_panel(windows[i]);
-    }
-
-    set_panel_userptr(panels[0], panels[1]);
-    set_panel_userptr(panels[1], panels[2]);
-    set_panel_userptr(panels[2], panels[0]);
-    
-    update_panels();
-    mvprintw(0, 0, "Tab -- next panel; F2 -- exit");
-    doupdate();
+    print_panels();
 
     top = panels[2];
     
@@ -109,12 +175,10 @@ int main(int argc, char *argv[])
             break;
         }
 
-        update_panels();
-        doupdate();
+        print_panels();
     }
 
-
-    for (i = 0; i < 3; ++i) {
+    for (i = 0; i < 4; ++i) {
         del_panel(panels[i]);
         delwin(windows[i]);
     }
