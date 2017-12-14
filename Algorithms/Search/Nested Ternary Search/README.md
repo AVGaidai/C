@@ -1,4 +1,4 @@
-f# Nested ternary search by gold ratio
+# Nested ternary search by gold ratio
 
 O(log(X/eps)) <br>
 X = Right - left; <br>
@@ -28,7 +28,9 @@ eps is accuracy calculations.
      onkeydown="return searchBox.OnSearchSelectKey(event)">
 </div>
 
-<!-- top -->
+<!-- iframe showing the search results (closed by default) -->
+
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
@@ -48,7 +50,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>GR</b>&#160;&#160;&#160;1.618</td></tr>
 <tr class="separator:a656da95f9680f14093be09a52ab6752f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a587e21dda1f72be700a6206023ad681b"><td class="memItemLeft" align="right" valign="top"><a id="a587e21dda1f72be700a6206023ad681b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FUNC</b>&#160;&#160;&#160;pow(x - 3, 2.0) + pow(y - 4, 2.0)</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FUNC</b>&#160;&#160;&#160;pow(x - 0.2, 2.0) + pow(x - y * y, 2.0)</td></tr>
 <tr class="separator:a587e21dda1f72be700a6206023ad681b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>

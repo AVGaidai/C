@@ -11,7 +11,7 @@
 
 #define GR 1.618
 
-#define FUNC pow(x - 3, 2.0) + pow(y - 4, 2.0)
+#define FUNC pow(x - 0.2, 2.0) + pow(x - y * y, 2.0)
 
 int cnt = 0;
 
@@ -53,51 +53,81 @@ void Nested_Ternary_Search_Min(double (*f)(double, double),
                                  double left_y, double right_y,
                                  double *x, double *y, double eps)
 {
-    double a, b, fa, fb;
+    double ax, bx, ay, by, f1a, f1b, f2a, f2b, y1, y2, left, right;
 
-    a = right_x - (right_x - left_x) / GR;
-    b = left_x + (right_x - left_x) / GR;
-    fa = f(a, 1);
-    fb = f(b, 1);
+    ax = right_x - (right_x - left_x) / GR;
+    bx = left_x + (right_x - left_x) / GR;
 
+    left = left_y;
+    right = right_y;
+    
     while (right_x - left_x > eps) {
-        if (fa < fb) {
-            right_x = b;
-            b = a;
-            fb = fa;
-            a = right_x - (right_x - left_x) / GR;
-            fa = f(a, 1);
+        ay = right_y - (right_y - left_y) / GR;
+        by = left_y + (right_y - left_y) / GR;
+        f2a = f(ax, ay);
+        f2b = f(ax, by);
+        
+        while (right_y - left_y > eps) {
+            if (f2a < f2b) {
+                right_y = by;
+                by = ay;
+                f2b = f2a;
+                ay = right_y - (right_y - left_y) / GR;
+                f2a = f(ax, ay);
+            } else {
+                left_y = ay;
+                ay = by;
+                f2a = f2b;
+                by = left_y + (right_y - left_y) / GR;
+                f2b = f(ax, by);
+            }
+        }
+        y1 = (left_y + right_y) / 2;
+
+        left_y = left;
+        right_y = right;
+        ay = right_y - (right_y - left_y) / GR;
+        by = left_y + (right_y - left_y) / GR;
+        f2a = f(bx, ay);
+        f2b = f(bx, by);
+        
+        while (right_y - left_y > eps) {
+            if (f2a < f2b) {
+                right_y = by;
+                by = ay;
+                f2b = f2a;
+                ay = right_y - (right_y - left_y) / GR;
+                f2a = f(bx, ay);
+            } else {
+                left_y = ay;
+                ay = by;
+                f2a = f2b;
+                by = left_y + (right_y - left_y) / GR;
+                f2b = f(bx, by);
+            }
+        }
+        y2 = (left_y + right_y) / 2;
+
+        f1a = f(ax, y1);
+        f1b = f(bx, y2);
+        
+        if (f1a < f1b) {
+            right_x = bx;
+            bx = ax;
+            f1b = f1a;
+            ax = right_x - (right_x - left_x) / GR;
+            f1a = f(ax, y1);
+            *y = y1;
         } else {
-            left_x = a;
-            a = b;
-            fa = fb;
-            b = left_x + (right_x - left_x) / GR;
-            fb = f(b, 1);
+            left_x = ax;
+            ax = bx;
+            f1a = f1b;
+            bx = left_x + (right_x - left_x) / GR;
+            f1b = f(bx, y2);
+            *y = y2;
         }
     }
     *x = (left_x + right_x) / 2;
-    
-    a = right_y - (right_y - left_y) / GR;
-    b = left_y + (right_y - left_y) / GR;
-    fa = f(1, a);
-    fb = f(1, b);
-
-    while (right_y - left_y > eps) {
-        if (fa < fb) {
-            right_y = b;
-            b = a;
-            fb = fa;
-            a = right_y - (right_y - left_y) / GR;
-            fa = f(1, a);
-        } else {
-            left_y = a;
-            a = b;
-            fa = fb;
-            b = left_y + (right_y - left_y) / GR;
-            fb = f(1, b);
-        }
-    }
-    *y = (left_y + right_y) / 2;
 }
 
 
@@ -124,51 +154,81 @@ void Nested_Ternary_Search_Max(double (*f)(double, double),
                                  double left_y, double right_y,
                                  double *x, double *y, double eps)
 {
-    double a, b, fa, fb;
+    double ax, bx, ay, by, f1a, f1b, f2a, f2b, y1, y2, left, right;
 
-    a = right_x - (right_x - left_x) / GR;
-    b = left_x + (right_x - left_x) / GR;
-    fa = f(a, 1);
-    fb = f(b, 1);
+    ax = right_x - (right_x - left_x) / GR;
+    bx = left_x + (right_x - left_x) / GR;
 
+    left = left_y;
+    right = right_y;
+    
     while (right_x - left_x > eps) {
-        if (fa > fb) {
-            right_x = b;
-            b = a;
-            fb = fa;
-            a = right_x - (right_x - left_x) / GR;
-            fa = f(a, 1);
+        ay = right_y - (right_y - left_y) / GR;
+        by = left_y + (right_y - left_y) / GR;
+        f2a = f(ax, ay);
+        f2b = f(ax, by);
+        
+        while (right_y - left_y > eps) {
+            if (f2a > f2b) {
+                right_y = by;
+                by = ay;
+                f2b = f2a;
+                ay = right_y - (right_y - left_y) / GR;
+                f2a = f(ax, ay);
+            } else {
+                left_y = ay;
+                ay = by;
+                f2a = f2b;
+                by = left_y + (right_y - left_y) / GR;
+                f2b = f(ax, by);
+            }
+        }
+        y1 = (left_y + right_y) / 2;
+
+        left_y = left;
+        right_y = right;
+        ay = right_y - (right_y - left_y) / GR;
+        by = left_y + (right_y - left_y) / GR;
+        f2a = f(bx, ay);
+        f2b = f(bx, by);
+        
+        while (right_y - left_y > eps) {
+            if (f2a > f2b) {
+                right_y = by;
+                by = ay;
+                f2b = f2a;
+                ay = right_y - (right_y - left_y) / GR;
+                f2a = f(bx, ay);
+            } else {
+                left_y = ay;
+                ay = by;
+                f2a = f2b;
+                by = left_y + (right_y - left_y) / GR;
+                f2b = f(bx, by);
+            }
+        }
+        y2 = (left_y + right_y) / 2;
+
+        f1a = f(ax, y1);
+        f1b = f(bx, y2);
+        
+        if (f1a > f1b) {
+            right_x = bx;
+            bx = ax;
+            f1b = f1a;
+            ax = right_x - (right_x - left_x) / GR;
+            f1a = f(ax, y1);
+            *y = y1;
         } else {
-            left_x = a;
-            a = b;
-            fa = fb;
-            b = left_x + (right_x - left_x) / GR;
-            fb = f(b, 1);
+            left_x = ax;
+            ax = bx;
+            f1a = f1b;
+            bx = left_x + (right_x - left_x) / GR;
+            f1b = f(bx, y2);
+            *y = y2;
         }
     }
     *x = (left_x + right_x) / 2;
-    
-    a = right_y - (right_y - left_y) / GR;
-    b = left_y + (right_y - left_y) / GR;
-    fa = f(1, a);
-    fb = f(1, b);
-
-    while (right_y - left_y > eps) {
-        if (fa > fb) {
-            right_y = b;
-            b = a;
-            fb = fa;
-            a = right_y - (right_y - left_y) / GR;
-            fa = f(1, a);
-        } else {
-            left_y = a;
-            a = b;
-            fa = fb;
-            b = left_y + (right_y - left_y) / GR;
-            fb = f(1, b);
-        }
-    }
-    *y = (left_y + right_y) / 2;
 }
 
 
