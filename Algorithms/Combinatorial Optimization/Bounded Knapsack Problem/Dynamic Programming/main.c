@@ -53,7 +53,11 @@ int BKP(int *weight, int *value, int N, int W, int b)
         printf("max[%d]=%d\n", i, max[i]);
     }
 
-
+    for (i = 0; i < N; ++i) {
+        printf("%d ", used[W][i]);
+    }
+    printf("\n");
+    
     for (i = 0; i <= W; ++i) {
         free(used[i]);
     }
