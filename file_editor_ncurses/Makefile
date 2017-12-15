@@ -1,5 +1,5 @@
 P=main.out
-OBJECTS=main.c
+OBJECTS=main.c file_manager.c file_manager.h
 CFLAGS=-Wall -g -pedantic -ansi
 LIBS=-lpanel -lncurses
 CC=gcc

@@ -1,6 +1,6 @@
 /** \file */
 /*
- * Data structure 'List' 
+ * Data structure 'linked list' 
  * Implementation by Anatoly Gaidai
  */
 #include <stdlib.h>
@@ -8,7 +8,7 @@
 
 
 /**
- * \brief Structure of the element of the list.
+ * \brief Structure of the element of the linked list.
  */
 struct node {
 
@@ -21,9 +21,9 @@ struct node {
 
 
 /**
- * \brief Structure of the list
+ * \brief Structure of the linked list.
  */
-struct list {
+struct llist {
 
     int nmemb;         /**< Number of the list members */
     
@@ -40,11 +40,9 @@ struct list {
  *
  * \return no value.
  */
-void list_init(struct list *list)
+void llist_init(struct llist *list)
 {
-   /*
-    * List is empty
-    */
+    /* List is empty */
     list->nmemb = 0;
     list->head = NULL;
     list->tail = NULL;
@@ -60,7 +58,7 @@ void list_init(struct list *list)
  *
  * \return the integer 1 upon failure and 0 upon successful completion.
  */
-int list_push_front(struct list *list, const void *payload, size_t size)
+int llist_push_front(struct llist *list, const void *payload, size_t size)
 {
     struct node *node;
     
@@ -95,7 +93,7 @@ int list_push_front(struct list *list, const void *payload, size_t size)
  *
  * \return the integer 1 upon failure and 0 upon successful completion.
  */
-int list_push_back(struct list *list, const void *payload, size_t size)
+int llist_push_back(struct llist *list, const void *payload, size_t size)
 {
     struct node *node;
     
@@ -130,7 +128,7 @@ int list_push_back(struct list *list, const void *payload, size_t size)
  *
  * \return no value.
  */
-void list_free(struct list *list)
+void llist_free(struct llist *list)
 {
     struct node *node;
 
@@ -157,8 +155,8 @@ void list_free(struct list *list)
  *
  * \return the integer -1 upon failure find and 0 upon successful find.
  */
-int list_elem_find(struct list *list, void *dest, const void *src,
-                   size_t size, int (*compare)(void *, const void *, size_t))
+int llist_search(struct llist *list, void *dest, const void *src,
+                 size_t size, int (*compare)(void *, const void *, size_t))
 {
     struct node *node;
 
@@ -202,7 +200,7 @@ int list_elem_find(struct list *list, void *dest, const void *src,
  *
  * \return the integer -1 upon failure and 0 upon successful completion.
  */
-int list_elem_remove(struct list *list, const void *payload, size_t size)
+int llist_remove(struct llist *list, const void *payload, size_t size)
 {
     struct node *node, *node_prev;
 
@@ -246,7 +244,7 @@ int list_elem_remove(struct list *list, const void *payload, size_t size)
  * \return the integer NULL upon failure and pointer to 
  * element upon successful completion.
  */
-void *list_elem_pop_front(struct list *list, size_t *size)
+void *llist_pop_front(struct llist *list, size_t *size)
 {
     struct node *node;
 
