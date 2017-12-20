@@ -72,7 +72,6 @@ int sllist_insert(struct sllist *list, const void *payload, size_t size)
     
     node = (void *) malloc(sizeof(struct slnode));
     if (!node) {
-        fprintf(stderr, "ERROR: sllist_insert()...\n");
         return 1;
     }
 
@@ -112,7 +111,6 @@ int sllist_insert_back(struct sllist *list, const void *payload, size_t size)
     
     node = (void *) malloc(sizeof(struct slnode));
     if (!node) {
-        fprintf(stderr, "ERROR: sllist_insert()...\n");
         return 1;
     }
 
@@ -279,7 +277,6 @@ void *sllist_eject(struct sllist *list, size_t *size)
     void *payload;
 
     if (!list->nmemb) {
-        fprintf(stdout, "List is empty!\n");
         *size = 0;
         return NULL;
     }
@@ -321,7 +318,6 @@ void *sllist_eject_back(struct sllist *list, size_t *size)
     void *payload;
     
     if (!list->nmemb) {
-        fprintf(stdout, "List is empty!\n");
         *size = 0;
         return NULL;
     }
@@ -370,7 +366,6 @@ void *sllist_eject_curr(struct sllist *list, size_t *size)
     struct slnode *node, *node_prev;
     
     if (!list->nmemb) {
-        fprintf(stdout, "List is empty!\n");
         *size = 0;
         return NULL;
     }
@@ -419,7 +414,6 @@ void *sllist_get(struct sllist *list, size_t *size)
     void *payload;
     
     if (!list->nmemb) {
-        fprintf(stdout, "List is empty!\n");
         return NULL;
     }
     
@@ -448,7 +442,6 @@ void *sllist_get_back(struct sllist *list, size_t *size)
     void *payload;
     
     if (!list->nmemb) {
-        fprintf(stdout, "List is empty!\n");
         return NULL;
     }
     
@@ -477,7 +470,6 @@ void *sllist_get_curr(struct sllist *list, size_t *size)
     void *payload;
     
     if (!list->nmemb) {
-        fprintf(stdout, "List is empty!\n");
         return NULL;
     }
     
