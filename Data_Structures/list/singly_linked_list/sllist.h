@@ -49,7 +49,7 @@ void sllist_init(struct sllist *);
 
 
 /**
- * \brief Function addition of node to the top of the list.
+ * \brief Function addition of node to the front of the list.
  *
  * Computational complexity: T(n) = O(1).
  *
@@ -59,11 +59,11 @@ void sllist_init(struct sllist *);
  *
  * \return the integer 1 upon failure and 0 upon successful completion.
  */
-int sllist_insert(struct sllist *, const void *, size_t);
+int sllist_insert(struct sllist *, const void *, size_t );
 
 
 /**
- * \brief Function addition node to the end of the list.
+ * \brief Function addition node to the back of the list.
  * 
  * Cumputational complexity: T(n) = O(1).
  *
@@ -210,11 +210,24 @@ void *sllist_get_curr(struct sllist *, size_t *);
  *
  * \param list is pointer to the list.
  *
- * \return the integer 1 upon end pointer and 0 upon moved pointer.
+ * \return the integer 1 upon pointer to last node or list is empty
+ *         and 0 upon moved pointer.
  */
-int sllist_next_ptr(struct sllist *);
+int sllist_next_node(struct sllist *);
 
 
+/**
+ * \brief Function moves pointer 'curr' to prev node of the list.
+ *
+ * Computational complexity: T(n) = O(n).
+ *
+ * \param list is pointer to the list.
+ *
+ * \return the integer 1 upon pointer to first node or list is empty
+ *         and 0 upon moved pointer.
+ */
+int sllist_prev_node(struct sllist *);
+        
 
 /**
  * \brief Function moves pointer 'curr' to head of the list.

@@ -56,7 +56,7 @@ void sllist_init(struct sllist *list)
 
 
 /**
- * \brief Function addition of node to the top of the list.
+ * \brief Function addition of node to the front of the list.
  *
  * Computational complexity: T(n) = O(1).
  *
@@ -96,7 +96,7 @@ int sllist_insert(struct sllist *list, const void *payload, size_t size)
 
 
 /**
- * \brief Function addition node to the end of the list.
+ * \brief Function addition node to the back of the list.
  * 
  * Cumputational complexity: T(n) = O(1).
  *
@@ -156,7 +156,6 @@ void sllist_free(struct sllist *list)
         free(node);
     }
     
-    list->head = NULL;
     list->tail = NULL;
     list->curr = NULL;
     list->nmemb = 0;
@@ -335,6 +334,8 @@ void *sllist_eject_back(struct sllist *list, size_t *size)
     
     if (node_prev == NULL) {
         list->head = NULL;
+    } else {
+        node_prev->next = NULL;
     }
     
     list->tail = node_prev;
@@ -366,6 +367,7 @@ void *sllist_eject_back(struct sllist *list, size_t *size)
 void *sllist_eject_curr(struct sllist *list, size_t *size)
 {
     void *payload;
+    struct slnode *node, *node_prev;
     
     if (!list->nmemb) {
         fprintf(stdout, "List is empty!\n");
@@ -377,7 +379,25 @@ void *sllist_eject_curr(struct sllist *list, size_t *size)
 
     payload = malloc(*size); 
     memcpy(payload, list->curr->payload, *size);
-    sllist_remove(list, (const void *) payload, *size);
+
+    for (node = list->head, node_prev = NULL;
+         node != list->curr; node = node->next) {
+        node_prev = node;
+    }
+
+    if (node_prev == NULL) {
+        list->head = list->curr->next;
+        list->curr = list->head;
+    } else {
+        node_prev->next = list->curr->next;
+        list->curr = node_prev;
+    }
+    --list->nmemb;
+
+    list->tail = node_prev;
+    
+    free(node->payload);
+    free(node);;
 
     return payload;    
 }
@@ -410,6 +430,7 @@ void *sllist_get(struct sllist *list, size_t *size)
     
     return payload;
 }
+
 
 /**
  * \brief Function getting payload of last node in the list.
@@ -476,19 +497,53 @@ void *sllist_get_curr(struct sllist *list, size_t *size)
  *
  * \param list is pointer to the list.
  *
- * \return the integer 1 upon end pointer and 0 upon moved pointer.
+ * \return the integer 1 upon pointer to last node or list is empty
+ *         and 0 upon moved pointer.
  */
-int sllist_next_ptr(struct sllist *list)
+int sllist_next_node(struct sllist *list)
 {
-    if (list->curr != NULL) {
-        if (list->curr == list->tail)
-            return 1;
-        list->curr = list->curr->next;
+    if (list->curr == NULL) {
+        return 1;
     }
 
+    if (list->curr == list->tail) {
+        return 1;
+    }
+    
+    list->curr = list->curr->next;
+    
     return 0;
 }
 
+
+/**
+ * \brief Function moves pointer 'curr' to prev node of the list.
+ *
+ * Computational complexity: T(n) = O(n).
+ *
+ * \param list is pointer to the list.
+ *
+ * \return the integer 1 upon pointer to first node or list is empty
+ *         and 0 upon moved pointer.
+ */
+int sllist_prev_node(struct sllist *list)
+{
+    struct slnode *node;
+    
+    if (list->curr == NULL) {
+        return 1;
+    }
+
+    if (list->curr == list->head) {
+        return 1;
+    }
+
+    for (node = list->head; node->next != list->curr; node = node->next);
+    list->curr = node;
+
+    return 0;
+}
+        
 
 /**
  * \brief Function moves pointer 'curr' to head of the list.
