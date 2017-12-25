@@ -13,82 +13,114 @@
 
 #include "../queue/queue.h"
 
-
 struct task {
 
+    double arrival_time;
     int id;
-    int time;
-    int step;
+
+};
+
+
+struct event {
+
+    double time;
+    int device_num;
+    int task_num;
+
+};
+
+
+struct device {
+
+    double time;
+    int id;
+    int completed_tasks;
+
+    struct task *task;
+    struct queue queue;
     
 };
 
 
-
-int task_add(struct task *task, struct queue *queue)
+int compare(const void *a, const void *b)
 {
-    return queue_push(queue, task, sizeof(struct task));
+    double t1, t2;
+    
+    struct device d1, d2;
+
+    d1 = *((struct device *) a);
+    d2 = *((struct device *) b);
+
+    t1 = d1.completed_tasks * d1.time + d1.time;
+    if (d1.task != NULL) {
+        t1 += d1.task->arrival_time;
+    }
+
+    t2 = d2.completed_tasks * d2.time + d2.time;
+    if (d2.task != NULL) {
+        t2 += d2.task->arrival_time;
+    }
+
+    return (t1 > t2) ? 1 : 0;
 }
 
 
-void modeling(struct queue *queue, int *t, int k, int T)
+void schedule_create(struct queue *schedule,
+                     struct device *device, int k, int T)
 {
     int i, j;
-    int *status;
     size_t size;
-    struct task **task;
 
-    task = (struct task **) malloc(k * sizeof(struct task *));
+    struct event event;
+        
     for (i = 0; i < k; ++i) {
-        task[i] = (struct task *) malloc(sizeof(struct task));
-    }
-    
-    status = (int *) calloc(k, k * sizeof(int));
-    for (i = 0; i < T; ++i) {
-        for (j = 0; j < k; ++j) {
-            if (status[j] == 1) {
-                if (--(task[j]->time) == 0) {
-                    status[j] = 2;
-                } 
-            } else if (status[j] == 0) {
-                task[j] = (struct task *) queue_pop(&queue[j], &size);
-                if (task[j] == NULL) continue;
-                status[j] = 1;
-                if (--(task[j]->time) == 0) {
-                    status[j] = 2;
-                }
+        if (device[i].task != NULL) {
+            
+            device[i].task->arrival_time +=
+                device[i].time * (device[i].completed_tasks++) + device[i].time;
+
+            for (j = 0; device[j].id != (device[i].id + 1) % k; ++j);
+            queue_push(&(device[j].queue), device[i].task, sizeof(struct task));
+
+            if (device[j].task == NULL) {
+                device[j].task = (struct task *)
+                    queue_pop(&(device[j].queue), &size);
             }
-        }
-        for (j = 0; j < k; ++j) {
-            if (status[j] == 2) {
-                task[j]->time = t[(j + 1) % k];
-                ++(task[j]->step);
-                task_add(task[j], &queue[(j + 1) % k]);
-                status[j] = 0;
+            
+            event.time = device[i].task->arrival_time;
+            if (event.time > T) {
+                queue_free(&(device[i].queue));
+                free(device[i].task);
+                continue;
             }
+            event.device_num = device[i].id;
+            event.task_num = device[i].task->id;
+            queue_push(schedule, &event, sizeof(struct event));
+
+            free(device[i].task);
+            device[i].task = (struct task *)
+                queue_pop(&(device[i].queue), &size);
+
+            qsort(device, k, sizeof(struct device), compare);
+            i = -1;
         }
     }
-    
-    for (i = 0; i < k; ++i) {
-        if (status[i] == 1) {
-            task_add(task[i], &queue[i]);
-        }
-        free(task[i]);
-    }
-    free(task);
-    free(status);
 }
 
 
 int main(int argc, char *argv[])
 {
     int k = 5, N = 10, T = 1000;
-    int i, opt, r;
-    int *t;
+    int i, opt;
     size_t size;
-    double *sigma, x;
-    struct queue *queue;
-    struct task task, *t1;
+    double x;
     
+    struct event *event;
+    struct queue schedule;
+    struct device *device;
+    struct task *task;
+    
+        
     while ((opt = getopt(argc, argv, "k:N:T:")) != -1) {
         switch (opt) {
         case 'k':
@@ -106,45 +138,54 @@ int main(int argc, char *argv[])
     }
     printf("k=%d\nN=%d\nT=%d\n", k, N, T);
 
-    sigma = (double *) malloc(k * sizeof(double));
-    t = (int *) malloc(k * sizeof(int));
-    queue = (struct queue *) malloc(k * sizeof(struct queue));
+    device = (struct device *) malloc(k * sizeof(struct device));
     
     srand(time(NULL));
+    
     for (i = 0; i < k; ++i) {
-        x = (double) rand() / (double) RAND_MAX;
-        sigma[i] = 1 - exp((i + 1) * x * -1.00);
-        t[i] = (int) round(sigma[i] * 10);
-        printf("sigma%d: %f (%d)\n", i + 1, sigma[i], t[i]);
-        queue_init(&queue[i]);
+        x = rand() / (double) RAND_MAX;
+        device[i].time = -1.00 * log(1.00 - x) / (i + 1);
+        device[i].id = i;
+        queue_init(&(device[i].queue));
     }
+    device[0].time = 1.98;
+    device[1].time = 0.66;
+    device[2].time = 0.13;
+    device[3].time = 0.11;
+    device[4].time = 0.08;
+    
+    qsort(device, k, sizeof(struct device), compare);
 
-
+    task = (struct task *) malloc(N * sizeof(struct task));
+    
     for (i = 0; i < N; ++i) {
-        r = rand() % k;
-        task.id = i;
-        task.time = t[r];
-        task.step = 0;
-        task_add(&task, &queue[r]);
+        task[i].arrival_time = 0.00;
+        task[i].id = i;
+        printf("%d\n", i % k);
+        queue_push(&(device[i % k].queue), &task[i], sizeof(struct task));
     }
 
+    for (i = 0; i < k; ++i) {
+        printf("device #%d time: %f\n", device[i].id, device[i].time);
+        device[i].task = (struct task *) queue_pop(&(device[i].queue), &size);
+    }
 
-    modeling(queue, t, k, T);
+    queue_init(&schedule);
+    schedule_create(&schedule, device, k, T);
 
+    while ((event = (struct event *) queue_pop(&schedule, &size)) != NULL) {
+        printf("Event (time=%f): task %d from device #%d to device #%d\n",
+               event->time, event->task_num,
+               event->device_num, (event->device_num + 1) % k);
+    }
+    queue_free(&schedule);
+    free(task);
     
     for (i = 0; i < k; ++i) {
-        printf("\nDevice %d: \n{\n", i);
-        while ((t1 = (struct task *) queue_pop(&queue[i], &size)) != NULL) {
-            printf("t%d(time: %d, cycle: %d)\n",
-                   t1->id, t1->time, t1->step / k);
-        }
-        printf("}\n");
-        queue_free(&queue[i]);
+        queue_free(&(device[i].queue));
     }
     
-    free(queue);
-    free(t);
-    free(sigma); 
+    free(device);
     
     return 0;
 }
