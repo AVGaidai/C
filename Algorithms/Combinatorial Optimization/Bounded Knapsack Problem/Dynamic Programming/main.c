@@ -40,8 +40,9 @@ int BKP(int *weight, int *value, int N, int W, int b)
             used[i][k] = used[i - 1][k];
         }
         for (j = 0; j < N; ++j) {
-            if (used[i - 1][j] < b && i - weight[j] >= 0) {
-                if (value[j] + max[i - weight[j]] > max[i]) {
+            if (i - weight[j] >= 0) {
+                if (used[i - weight[j]][j] < b &&
+                    value[j] + max[i - weight[j]] > max[i]) {
                     max[i] = value[j] + max[i - weight[j]];
                     for (k = 0; k < N; ++k) {
                         used[i][k] = used[i - weight[j]][k];
