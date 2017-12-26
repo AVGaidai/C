@@ -10,4 +10,4 @@ all:
 	$(CC) $(CFLAGS) -o $(P) $(OBJ) $(LDLIBS)
 
 clean:
-	rm -rf *.out
+	rm -rf *.out *.txt
