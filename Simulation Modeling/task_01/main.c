@@ -237,7 +237,6 @@ int main(int argc, char *argv[])
     printf("\tcycle number: %d\n"
            "\tavg cycle time: %f\n\n",
            task[0].transition / k, T / (task[0].transition / k));
-    }
     printf("=====================\n");    
     
     free(task);
