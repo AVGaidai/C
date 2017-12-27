@@ -216,11 +216,11 @@ int main(int argc, char *argv[])
         for (i = 0; i < k; ++i) {
             distr[i] += state[i];
         }
-        printf("Event (time=%f): task %d from device #%d to device #%d"
-               " | %d tasks on device %d\n",
-               event->time, event->task_id,
-               event->device_id, (event->device_id + 1) % k,
-               state[event->device_id], event->device_id);
+        /* printf("Event (time=%f): task %d from device #%d to device #%d" */
+        /*        " | %d tasks on device %d\n", */
+        /*        event->time, event->task_id, */
+        /*        event->device_id, (event->device_id + 1) % k, */
+        /*        state[event->device_id], event->device_id); */
         execute_event(event, task);
         remove_event(event);
     }
