@@ -234,12 +234,9 @@ int main(int argc, char *argv[])
 
     free(distr);
     printf("\n\n=====================\n");
-    for (i = 0; i < N; ++i) {
-        printf("task #%d\n"
-               "_____________________________\n"
-               "\tcycle number: %d\n"
-               "\tavg cycle time: %f\n\n",
-               i, task[i].transition / k, T / (task[i].transition / k));
+    printf("\tcycle number: %d\n"
+           "\tavg cycle time: %f\n\n",
+           task[0].transition / k, T / (task[0].transition / k));
     }
     printf("=====================\n");    
     
