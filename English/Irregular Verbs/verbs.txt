@@ -1,100 +1,100 @@
-be	was , were	been	быть , являться
-beat	beat	beaten	бить , колотить
-become	became	become	становиться
-begin	began	begun	начинать
-bend	bent	bent	гнуть
-bet	bet	bet	держать пари
-bite	bit	bitten	кусать
-blow	blew	blown	дуть , выдыхать
-break	broke	broken	ломать , разбивать , разрушать
-bring	brought	brought	приносить , привозить , доставлять
-build	built	built	строить , сооружать
-buy	bought	bought	покупать , приобретать
-catch	caught	caught	ловить , поймать , схватить
-choose	chose	chosen	выбирать , избирать
-come	came	come	приходить , подходить
-cost	cost	cost	стоить , обходиться
-cut	cut	cut	резать , разрезать
-deal	dealt	dealt	иметь дело , распределять
-dig	dug	dug	копать , рыть
-do	did	done	делать , выполнять
-draw	drew	drawn	рисовать чертить
-drink	drank	drunk	пить
-drive	drove	driven	ездить , подвозить
-eat	ate	eaten	есть , поглощать , поедать
-fall	fell	fallen	падать
-feed	fed	fed	кормить
-feel	felt	felt	чувствовать , ощущать
-fight	fought	fought	драться , сражаться , воевать
-find	found	found	находить , обнаруживать
-fly	flew	flown	летать
-forget	forgot	forgotten	забывать о чём-либо , забывать
-forgive	forgave	forgiven	прощать
-freeze	froze	frozen	замерзать , замирать
-get	got	got	получать , добираться
-give	gave	given	дать , подать , дарить
-go	went	gone	идти , двигаться
-grow	grew	grown	расти , вырастать
-hang	hung	hung	вешать , развешивать , висеть
-have	had	had	иметь , обладать
-hear	heard	heard	слышать , услышать
-hide	hid	hidden	прятать , скрывать
-hit	hit	hit	ударять , поражать
-hold	held	held	держать , удерживать , задерживать
-hurt	hurt	hurt	ранить , причинять боль , ушибить
-keep	kept	kept	хранить , сохранять , поддерживать
-know	knew	known	знать , иметь представление
-lay	laid	laid	класть , положить , покрывать
-lead	led	led	вести за собой , сопровождать , руководить
-leave	left	left	покидать , уходить , уезжать , оставлять
-lend	lent	lent	одалживать , давать взаймы , давать в долг
-let	let	let	позволять , разрешать
-lie	lay	lain	лежать
-light	lit	lit	зажигать , светиться , освещать
-lose	lost	lost	терять , лишаться , утрачивать
-make	made	made	делать , создавать , изготавливать
-mean	meant	meant	значить , иметь в виду , подразумевать
-meet	met	met	встречать , знакомиться
-pay	paid	paid	платить , оплачивать , рассчитываться
-put	put	put	ставить , помещать , класть
-read	read	read	читать , прочитать
-ride	rode	ridden	ехать верхом , кататься
-ring	rang	rung	звенеть , звонить
-rise	rose	risen	восходить , вставать , подниматься
-run	ran	run	бежать , бегать
-say	said	said	говорить , сказать , произносить
-see	saw	seen	видеть
-seek	sought	sought	искать , разыскивать
-sell	sold	sold	продавать , торговать
-send	sent	sent	посылать , отправлять , отсылать
-set	set	set	устанавливать , задавать , назначать
-shake	shook	shaken	трясти , встряхивать
-shine	shone	shone	светить , сиять , озарять
-shoot	shot	shot	стрелять
-show	showed	shown , showed	показывать
-shut	shut	shut	закрывать , запирать , затворять
-sing	sang	sung	петь , напевать
-sink	sank	sunk	тонуть , погружаться
-sit	sat	sat	сидеть , садиться
-sleep	slept	slept	спать
-speak	spoke	spoken	говорить , разговаривать , высказываться
-spend	spent	spent	тратить , расходовать , проводить время
-stand	stood	stood	стоять
-steal	stole	stolen	воровать , красть
-stick	stuck	stuck	втыкать , приклеивать
-strike	struck	struck , stricken	ударять , бить , поражать
-swear	swore	sworn	клясться , присягать
-sweep	swept	swept	мести , подметать , смахивать
-swim	swam	swum	плавать , плыть
-swing	swung	swung	качаться , вертеться
-take	took	taken	брать , хватать , взять
-teach	taught	taught	учить , обучать
-tear	tore	torn	рвать , отрывать
-tell	told	told	рассказывать
-think	thought	thought	думать , мыслить , размышлять
-throw	threw	thrown	бросать , кидать , метать
-understand	understood	understood	понимать , постигать
-wake	woke	woken	просыпаться , будить
-wear	wore	worn	носить одежду , носить
-win	won	won	победить , выиграть
-write	wrote	written	писать , записывать
+be  was , were	been	Р±С‹С‚СЊ , СЏРІР»СЏС‚СЊСЃСЏ
+beat	beat	beaten	Р±РёС‚СЊ , РєРѕР»РѕС‚РёС‚СЊ
+become	became	become	СЃС‚Р°РЅРѕРІРёС‚СЊСЃСЏ
+begin	began	begun	РЅР°С‡РёРЅР°С‚СЊ
+bend	bent	bent	РіРЅСѓС‚СЊ
+bet	bet	bet	РґРµСЂР¶Р°С‚СЊ РїР°СЂРё
+bite	bit	bitten	РєСѓСЃР°С‚СЊ
+blow	blew	blown	РґСѓС‚СЊ , РІС‹РґС‹С…Р°С‚СЊ
+break	broke	broken	Р»РѕРјР°С‚СЊ , СЂР°Р·Р±РёРІР°С‚СЊ , СЂР°Р·СЂСѓС€Р°С‚СЊ
+bring	brought	brought	РїСЂРёРЅРѕСЃРёС‚СЊ , РїСЂРёРІРѕР·РёС‚СЊ , РґРѕСЃС‚Р°РІР»СЏС‚СЊ
+build	built	built	СЃС‚СЂРѕРёС‚СЊ , СЃРѕРѕСЂСѓР¶Р°С‚СЊ
+buy	bought	bought	РїРѕРєСѓРїР°С‚СЊ , РїСЂРёРѕР±СЂРµС‚Р°С‚СЊ
+catch	caught	caught	Р»РѕРІРёС‚СЊ , РїРѕР№РјР°С‚СЊ , СЃС…РІР°С‚РёС‚СЊ
+choose	chose	chosen	РІС‹Р±РёСЂР°С‚СЊ , РёР·Р±РёСЂР°С‚СЊ
+come	came	come	РїСЂРёС…РѕРґРёС‚СЊ , РїРѕРґС…РѕРґРёС‚СЊ
+cost	cost	cost	СЃС‚РѕРёС‚СЊ , РѕР±С…РѕРґРёС‚СЊСЃСЏ
+cut	cut	cut	СЂРµР·Р°С‚СЊ , СЂР°Р·СЂРµР·Р°С‚СЊ
+deal	dealt	dealt	РёРјРµС‚СЊ РґРµР»Рѕ , СЂР°СЃРїСЂРµРґРµР»СЏС‚СЊ
+dig	dug	dug	РєРѕРїР°С‚СЊ , СЂС‹С‚СЊ
+do	did	done	РґРµР»Р°С‚СЊ , РІС‹РїРѕР»РЅСЏС‚СЊ
+draw	drew	drawn	СЂРёСЃРѕРІР°С‚СЊ , С‡РµСЂС‚РёС‚СЊ
+drink	drank	drunk	РїРёС‚СЊ
+drive	drove	driven	РµР·РґРёС‚СЊ , РїРѕРґРІРѕР·РёС‚СЊ
+eat	ate	eaten	РµСЃС‚СЊ, РїРѕРіР»РѕС‰Р°С‚СЊ , РїРѕРµРґР°С‚СЊ
+fall	fell	fallen	РїР°РґР°С‚СЊ
+feed	fed	fed	РєРѕСЂРјРёС‚СЊ
+feel	felt	felt	С‡СѓРІСЃС‚РІРѕРІР°С‚СЊ , РѕС‰СѓС‰Р°С‚СЊ
+fight	fought	fought	РґСЂР°С‚СЊСЃСЏ , СЃСЂР°Р¶Р°С‚СЊСЃСЏ , РІРѕРµРІР°С‚СЊ
+find	found	found	РЅР°С…РѕРґРёС‚СЊ , РѕР±РЅР°СЂСѓР¶РёРІР°С‚СЊ
+fly	flew	flown	Р»РµС‚Р°С‚СЊ
+forget	forgot	forgotten	Р·Р°Р±С‹РІР°С‚СЊ Рѕ С‡С‘Рј-Р»РёР±Рѕ , Р·Р°Р±С‹РІР°С‚СЊ
+forgive	forgave	forgiven	РїСЂРѕС‰Р°С‚СЊ
+freeze	froze	frozen	Р·Р°РјРµСЂР·Р°С‚СЊ , Р·Р°РјРёСЂР°С‚СЊ
+get	got	got	РїРѕР»СѓС‡Р°С‚СЊ , РґРѕР±РёСЂР°С‚СЊСЃСЏ
+give	gave	given	РґР°С‚СЊ , РїРѕРґР°С‚СЊ , РґР°СЂРёС‚СЊ
+go	went	gone	РёРґС‚Рё , РґРІРёРіР°С‚СЊСЃСЏ
+grow	grew	grown	СЂР°СЃС‚Рё , РІС‹СЂР°СЃС‚Р°С‚СЊ
+hang	hung	hung	РІРµС€Р°С‚СЊ , СЂР°Р·РІРµС€РёРІР°С‚СЊ , РІРёСЃРµС‚СЊ
+have	had	had	РёРјРµС‚СЊ , РѕР±Р»Р°РґР°С‚СЊ
+hear	heard	heard	СЃР»С‹С€Р°С‚СЊ , СѓСЃР»С‹С€Р°С‚СЊ
+hide	hid	hidden	РїСЂСЏС‚Р°С‚СЊ , СЃРєСЂС‹РІР°С‚СЊ
+hit	hit	hit	СѓРґР°СЂСЏС‚СЊ , РїРѕСЂР°Р¶Р°С‚СЊ
+hold	held	held	РґРµСЂР¶Р°С‚СЊ , СѓРґРµСЂР¶РёРІР°С‚СЊ , Р·Р°РґРµСЂР¶РёРІР°С‚СЊ
+hurt	hurt	hurt	СЂР°РЅРёС‚СЊ , РїСЂРёС‡РёРЅСЏС‚СЊ Р±РѕР»СЊ , СѓС€РёР±РёС‚СЊ
+keep	kept	kept	С…СЂР°РЅРёС‚СЊ , СЃРѕС…СЂР°РЅСЏС‚СЊ , РїРѕРґРґРµСЂР¶РёРІР°С‚СЊ
+know	knew	known	Р·РЅР°С‚СЊ , РёРјРµС‚СЊ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ
+lay	laid	laid	РєР»Р°СЃС‚СЊ , РїРѕР»РѕР¶РёС‚СЊ , РїРѕРєСЂС‹РІР°С‚СЊ
+lead	led	led	РІРµСЃС‚Рё Р·Р° СЃРѕР±РѕР№ , СЃРѕРїСЂРѕРІРѕР¶РґР°С‚СЊ , СЂСѓРєРѕРІРѕРґРёС‚СЊ
+leave	left	left	РїРѕРєРёРґР°С‚СЊ , СѓС…РѕРґРёС‚СЊ , СѓРµР·Р¶Р°С‚СЊ , РѕСЃС‚Р°РІР»СЏС‚СЊ
+lend	lent	lent	РѕРґР°Р»Р¶РёРІР°С‚СЊ, РґР°РІР°С‚СЊ РІР·Р°Р№РјС‹ , РґР°РІР°С‚СЊ РІ РґРѕР»Рі
+let	let	let	РїРѕР·РІРѕР»СЏС‚СЊ , СЂР°Р·СЂРµС€Р°С‚СЊ
+lie	lay	lain	Р»РµР¶Р°С‚СЊ
+light	lit	lit	Р·Р°Р¶РёРіР°С‚СЊ , СЃРІРµС‚РёС‚СЊСЃСЏ , РѕСЃРІРµС‰Р°С‚СЊ
+lose	lost	lost	С‚РµСЂСЏС‚СЊ , Р»РёС€Р°С‚СЊСЃСЏ , СѓС‚СЂР°С‡РёРІР°С‚СЊ
+make	made	made	РґРµР»Р°С‚СЊ , СЃРѕР·РґР°РІР°С‚СЊ , РёР·РіРѕС‚Р°РІР»РёРІР°С‚СЊ
+mean	meant	meant	Р·РЅР°С‡РёС‚СЊ , РёРјРµС‚СЊ РІ РІРёРґСѓ , РїРѕРґСЂР°Р·СѓРјРµРІР°С‚СЊ
+meet	met	met	РІСЃС‚СЂРµС‡Р°С‚СЊ , Р·РЅР°РєРѕРјРёС‚СЊСЃСЏ
+pay	paid	paid	РїР»Р°С‚РёС‚СЊ , РѕРїР»Р°С‡РёРІР°С‚СЊ , СЂР°СЃСЃС‡РёС‚С‹РІР°С‚СЊСЃСЏ
+put	put	put	СЃС‚Р°РІРёС‚СЊ , РїРѕРјРµС‰Р°С‚СЊ , РєР»Р°СЃС‚СЊ
+read	read	read	С‡РёС‚Р°С‚СЊ , РїСЂРѕС‡РёС‚Р°С‚СЊ
+ride	rode	ridden	РµС…Р°С‚СЊ РІРµСЂС…РѕРј , РєР°С‚Р°С‚СЊСЃСЏ
+ring	rang	rung	Р·РІРµРЅРµС‚СЊ , Р·РІРѕРЅРёС‚СЊ
+rise	rose	risen	РІРѕСЃС…РѕРґРёС‚СЊ , РІСЃС‚Р°РІР°С‚СЊ , РїРѕРґРЅРёРјР°С‚СЊСЃСЏ
+run ran	run	Р±РµР¶Р°С‚СЊ , Р±РµРіР°С‚СЊ
+say	said	said	РіРѕРІРѕСЂРёС‚СЊ , СЃРєР°Р·Р°С‚СЊ , РїСЂРѕРёР·РЅРѕСЃРёС‚СЊ
+see	saw	seen	РІРёРґРµС‚СЊ
+seek	sought	sought	РёСЃРєР°С‚СЊ , СЂР°Р·С‹СЃРєРёРІР°С‚СЊ
+sell	sold	sold	РїСЂРѕРґР°РІР°С‚СЊ , С‚РѕСЂРіРѕРІР°С‚СЊ
+send	sent	sent	РїРѕСЃС‹Р»Р°С‚СЊ , РѕС‚РїСЂР°РІР»СЏС‚СЊ , РѕС‚СЃС‹Р»Р°С‚СЊ
+set	set	set	СѓСЃС‚Р°РЅР°РІР»РёРІР°С‚СЊ , Р·Р°РґР°РІР°С‚СЊ , РЅР°Р·РЅР°С‡Р°С‚СЊ
+shake	shook	shaken	С‚СЂСЏСЃС‚Рё , РІСЃС‚СЂСЏС…РёРІР°С‚СЊ
+shine	shone	shone	СЃРІРµС‚РёС‚СЊ , СЃРёСЏС‚СЊ , РѕР·Р°СЂСЏС‚СЊ
+shoot	shot	shot	СЃС‚СЂРµР»СЏС‚СЊ
+show	showed	shown , showed  РїРѕРєР°Р·С‹РІР°С‚СЊ
+shut	shut	shut	Р·Р°РєСЂС‹РІР°С‚СЊ , Р·Р°РїРёСЂР°С‚СЊ , Р·Р°С‚РІРѕСЂСЏС‚СЊ
+sing	sang	sung	РїРµС‚СЊ , РЅР°РїРµРІР°С‚СЊ
+sink	sank	sunk	С‚РѕРЅСѓС‚СЊ , РїРѕРіСЂСѓР¶Р°С‚СЊСЃСЏ
+sit	sat	sat	СЃРёРґРµС‚СЊ , СЃР°РґРёС‚СЊСЃСЏ
+sleep	slept	slept	СЃРїР°С‚СЊ
+speak	spoke	spoken	РіРѕРІРѕСЂРёС‚СЊ , СЂР°Р·РіРѕРІР°СЂРёРІР°С‚СЊ , РІС‹СЃРєР°Р·С‹РІР°С‚СЊСЃСЏ
+spend	spent	spent	С‚СЂР°С‚РёС‚СЊ , СЂР°СЃС…РѕРґРѕРІР°С‚СЊ , РїСЂРѕРІРѕРґРёС‚СЊ РІСЂРµРјСЏ
+stand	stood	stood	СЃС‚РѕСЏС‚СЊ
+steal	stole	stolen	РІРѕСЂРѕРІР°С‚СЊ , РєСЂР°СЃС‚СЊ
+stick	stuck	stuck	РІС‚С‹РєР°С‚СЊ , РїСЂРёРєР»РµРёРІР°С‚СЊ
+strike	struck	struck , stricken   СѓРґР°СЂСЏС‚СЊ , Р±РёС‚СЊ , РїРѕСЂР°Р¶Р°С‚СЊ
+swear	swore	sworn	РєР»СЏСЃС‚СЊСЃСЏ , РїСЂРёСЃСЏРіР°С‚СЊ
+sweep	swept	swept	РјРµСЃС‚Рё , РїРѕРґРјРµС‚Р°С‚СЊ , СЃРјР°С…РёРІР°С‚СЊ
+swim	swam	swum	РїР»Р°РІР°С‚СЊ , РїР»С‹С‚СЊ
+swing	swung	swung	РєР°С‡Р°С‚СЊСЃСЏ , РІРµСЂС‚РµС‚СЊСЃСЏ
+take	took	taken	Р±СЂР°С‚СЊ , С…РІР°С‚Р°С‚СЊ , РІР·СЏС‚СЊ
+teach	taught	taught	СѓС‡РёС‚СЊ , РѕР±СѓС‡Р°С‚СЊ
+tear	tore	torn	СЂРІР°С‚СЊ , РѕС‚СЂС‹РІР°С‚СЊ
+tell	told	told	СЂР°СЃСЃРєР°Р·С‹РІР°С‚СЊ
+think	thought	thought	РґСѓРјР°С‚СЊ , РјС‹СЃР»РёС‚СЊ , СЂР°Р·РјС‹С€Р»СЏС‚СЊ
+throw	threw	thrown	Р±СЂРѕСЃР°С‚СЊ , РєРёРґР°С‚СЊ , РјРµС‚Р°С‚СЊ
+understand	understood	understood	РїРѕРЅРёРјР°С‚СЊ , РїРѕСЃС‚РёРіР°С‚СЊ
+wake	woke	woken	РїСЂРѕСЃС‹РїР°С‚СЊСЃСЏ , Р±СѓРґРёС‚СЊ
+wear	wore	worn	РЅРѕСЃРёС‚СЊ РѕРґРµР¶РґСѓ
+win	won	won	РїРѕР±РµРґРёС‚СЊ , РІС‹РёРіСЂР°С‚СЊ
+write	wrote	written	РїРёСЃР°С‚СЊ , Р·Р°РїРёСЃС‹РІР°С‚СЊ
