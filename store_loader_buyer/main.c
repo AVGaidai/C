@@ -133,7 +133,13 @@ void *buyer(void *arg)
         pthread_mutex_lock(&mutex);
         stores[ncs].status = BUSY;
         pthread_mutex_unlock(&mutex);
-        if (needs >= stores[ncs].val) {
+        if (stores[ncs].val == 0) {
+            pthread_mutex_lock(&mutex);
+            stores[ncs].status = FREE;
+            pthread_mutex_unlock(&mutex);
+            sleep(3);
+            continue;
+        } else if (needs >= stores[ncs].val) {
             needs -= stores[ncs].val;
             stores[ncs].val = 0;
         } else {
